@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int factorize(char *buffer)
+void factorize(char *buffer)
 {
-	int index, number;
+	long unsigned int index, number;
 
 	number = atoi(buffer);
 
-	for (index = 2; index < number; index++)
+	for (index = 2; index <= number; index++)
 	{
 		if (number % index == 0)
 		{
-			printf("%d=%d*%d\n", number, number/index, index);
+			printf("%lu=%lu*%lu\n", number, number/index, index);
+			break;
 		}
 	}
-	return (0);
 }
 
 int main(int argc, char *argv[])
